@@ -1,4 +1,4 @@
-<project>
+<project name= "test_Project" default="compress">
 
 	<path id="WEOServiceUnit.classpath">
 		<pathelement location="D:/WorkspaceJira/JiraAttaskConnector2/UpdateProject_lib/attask-stream-client.jar"/>
@@ -37,6 +37,14 @@
 		<classpath refid="WEOServiceUnit.classpath"/>
 		</javac>
     </target>
+	
+	<target name="compress" depends="compile">
+        <jar destfile="dist/UpdateProject.jar" basedir="build/classes" />
+	</target>
+	
+<!-- 	<target name="execute" depends="compile">
+    <java classname="UpdateProject" classpath="build/classes" />
+	</target> -->
 
   <!--   <target name="jar">
         <mkdir dir="build/jar"/>
